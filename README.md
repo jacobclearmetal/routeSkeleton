@@ -4,5 +4,4 @@ A skeletal structure inspired by [View](https://survivejs.com/react/advanced-tec
 
 ## TODO:
 
-- [ ] .gitignore .DS_Store
 - [ ] Handle Design Imports: custom Icons, Images, etc.
