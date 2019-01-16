@@ -2,11 +2,25 @@
 
 A skeletal structure inspired by [View](https://survivejs.com/react/advanced-techniques/structuring-react-projects/#directory-per-view), [Ducks](https://medium.freecodecamp.org/scaling-your-redux-app-with-ducks-6115955638be), and [Fractal](https://hackernoon.com/fractal-a-react-app-structure-for-infinite-scale-4dab943092af).
 
-## React Rules
+## React
 
-#### Long Live Folders
+### Fractal Folders
 
-##### Components live in their own folder:
+> Why wrap a component in a folder?
+
+It allows a singular component to be cleaned up, tested, accessible styles, and _componentized_:
+
+```
+src
+ └── Foo
+    ├── index.js
+    ├── utils.js
+    ├── Foo.spec.js
+    ├── constants.js
+    └── styles.js
+```
+
+##### How to Fractal:
 
 ```
 components
@@ -25,7 +39,7 @@ components
         └ index.js
 ```
 
-##### Siblings together, under parents:
+##### Siblings, together, under parents:
 
 ```
 components
