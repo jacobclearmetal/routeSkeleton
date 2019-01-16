@@ -1,3 +1,5 @@
+> As a developer, it's common to spend more time figuring out what code does, rather than actually writing code.
+
 # Repo Proposal
 
 A skeletal structure inspired by [View](https://survivejs.com/react/advanced-techniques/structuring-react-projects/#directory-per-view), [Ducks](https://medium.freecodecamp.org/scaling-your-redux-app-with-ducks-6115955638be), and [Fractal](https://hackernoon.com/fractal-a-react-app-structure-for-infinite-scale-4dab943092af).
@@ -23,16 +25,16 @@ A skeletal structure inspired by [View](https://survivejs.com/react/advanced-tec
 
 > Why wrap a component in a folder?
 
-It encourages component clean-up, testing, low-barrier styling, and faster composition:
+It encourages component clean-up, testing, accessible styling, and faster re-[composition](https://reactjs.org/docs/composition-vs-inheritance.html):
 
 ```
 src
- └── Foo
-    ├── index.js
-    ├── utils.js
-    ├── Foo.spec.js
-    ├── constants.js
-    └── styles.js
+ └ Foo
+    ├ index.js
+    ├ utils.js
+    ├ Foo.spec.js
+    ├ constants.js
+    └ styles.js
 ```
 
 ##### How to Fractal
@@ -41,90 +43,94 @@ We start with `Foo`
 
 ```
 components
- └── Foo
-     └ index.js
+ └ Foo
+    └ index.js
 ```
 
 ##### Children and Parents
 
 ```
 components
- └── Foo        <-- Parent
-     ├ index.js
-     │
-     └── FooNav <-- Child
-         └ index.js
+ └ Foo       <-- Parent
+    ├ index.js
+    └ FooNav <-- Child
+        └ index.js
 ```
 
 ##### Siblings, together, under parents
 
 ```
 components
- └── Foo           <-- Parent
-     ├ index.js
-     │
-     ├── FooNav    <-- Child / Sibling
-     │   └ index.js
-     └── FooFooter <-- Child / Sibling
-         └ index.js
+ └ Foo          <-- Parent
+    ├ index.js
+    ├ FooNav    <-- Child / Sibling
+    │   └ index.js
+    └ FooFooter <-- Child / Sibling
+        └ index.js
 ```
 
 ##### Family. Forever.
 
 ```
 components
- └── Foo
-     ├ index.js
-     ├── FooNav
-     │   └ index.js
-     │
-     └── FooFooter
-         ├ index.js
-         │
-         ├── FooFooterButton
-         │   └ index.js
-         └── ListOfBars
-             ├ index.js
-             └── Baz
-                 └ index.js
+ └ Foo
+    ├ index.js
+    ├ FooNav
+    │   └ index.js
+    └ FooFooter
+        ├ index.js
+        ├ FooFooterButton
+        │ ├ index.js
+        │ └ Bar
+        │   └ index.js
+        ├ FooFooterButton
+        │   └ index.js
+        └ ListOfBars
+            ├ index.js
+            └ Bar
+                └ index.js
 ```
 
 ##### Component Re-use?
 
-// TODO Utilize family forever example for a component refactor
+```
+components
+ └ Foo
+    ├ index.js
+    ├ FooNav
+    │   └ index.js
+    └ FooFooter
+        ├ index.js
+        ├ FooFooterButton
+        │ ├ index.js
+        │ └ Bar         <-- Duplication!
+        │   └ index.js
+        ├ FooFooterButton
+        │   └ index.js
+        └ ListOfBars
+            ├ index.js
+            └ Bar       <-- Duplication!
+                └ index.js
+```
+
+Move/Rename 'till it makes sense to you:
 
 ```
 components
- ├── Foo
- │   ├ index.js
- │   │
- │   ├── Baz // DUPLICATE USE
- │   │   └ index.js
- │   └── FooFooter
- │       └ index.js
- │
- └── Bar
-     ├ index.js
-     │
-     └── Baz // DUPLICATE USE
-         └ index.js
-```
-
-Move/Rename 'till it makes sense:
-
-```
-components
- ├── Nav // Was FooNav
- │   └ index.js
- │
- ├── Foo
- │   ├ index.js
- │   │
- │   └── FooFooter
- │        └ index.js
- │
- └── Bar
-     └ index.js
+ ├ Bar                  <-- Boom.
+ │  └ index.js
+ └ Foo
+    ├ index.js
+    ├ FooNav
+    │   └ index.js
+    └ FooFooter
+        ├ index.js
+        ├ FooFooterButton
+        │   └ index.js
+        ├ FooFooterButton
+        │   └ index.js
+        └ ListOfBars
+            └ index.js
 ```
 
 #### Container === index.js
@@ -136,14 +142,14 @@ If you want to separate `Foo` component into a presentational and container:
 
 ```
 components
- └── Foo
-     ├ index.js // 'container'
-     └ Foo.js // 'presentational'
+ └ Foo
+    ├ index.js  <-- container AKA stateful component
+    └ Foo.js    <-- presentational AKA stateless component
 ```
 
 ### High-Level Organization
 
-Fractal a granular method of organizing, apply it however you'd like:
+Fractal a granular pattern, pair it with a broad organizational approach:
 
 #### Organize by Routes
 
@@ -151,12 +157,12 @@ Fractal a granular method of organizing, apply it however you'd like:
 www.clearmetal.com/home
 
 src
- ├── components // 'shared' components live here
- │   └── Nav
- │       └ index.js
- └── routes
-    ├── index.js
-    └── Home
+ ├ components  <-- "shared" components live here
+ │  └ Nav
+ │      └ index.js
+ └ routes
+    ├ index.js
+    └ Home
         ├ index.js
         ├ style.js
         ├ home.spec.js
@@ -167,22 +173,37 @@ src
 
 ```
 src
- ├── components
- │   ├── Home
+ ├ components
+ │   ├ Home
  │   │   ├ index.js
  │   │   ├ style.js
  │   │   └ Home.js
- │   └── Login
+ │   └ Login
  │       ├ index.js
  │       ├ style.js
  │       └ Login.js
- │
- └── routes
-     └── index.js
+ └ routes
+     └ index.js
 
 ```
 
 ## Redux Usage
+
+## Services
+
+Not everything can be a component. Independent modules can encapsulate business logic and be consumed throughout the app.
+
+```
+src
+ ├ components
+ ├ routes
+ ├ store
+ └ utils
+    ├ intercom
+    └ user
+        └ sessions
+            └ index.js
+```
 
 ## Sources
 
