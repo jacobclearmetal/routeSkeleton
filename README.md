@@ -5,14 +5,15 @@ A skeletal structure inspired by [View](https://survivejs.com/react/advanced-tec
 ## Contents:
 
 - [React](https://github.com/jacobclearmetal/routeSkeleton#react)
-  - [Fractal](https://github.com/jacobclearmetal/routeSkeleton##fractal-folders)
+  - [Fractal](https://github.com/jacobclearmetal/routeSkeleton#fractal-folders)
     - [How To](https://github.com/jacobclearmetal/routeSkeleton#how-to-fractal)
     - [Parents & Children](https://github.com/jacobclearmetal/routeSkeleton#children-and-parents)
-    - [Siblings]()
-    - [Example: Deep Nesting]()
-  - [Higher Level Organization]()
-    - [Routes]()
-    - [Functionality]()
+    - [Siblings](https://github.com/jacobclearmetal/routeSkeleton#siblings-together-under-parents)
+    - [Example: Deep Nesting](https://github.com/jacobclearmetal/routeSkeleton#family-forever)
+    - [Container/Presentation Components](https://github.com/jacobclearmetal/routeSkeleton#container--indexjs)
+  - [Higher Level Organization](https://github.com/jacobclearmetal/routeSkeleton#high-level-organization)
+    - [Example: Routes](https://github.com/jacobclearmetal/routeSkeleton#organize-by-routes)
+    - [Example: Functionality](https://github.com/jacobclearmetal/routeSkeleton#organize-by-functionality--business-logic)
 - [Redux]()
 
 ## React
