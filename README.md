@@ -190,6 +190,7 @@ src
   - [fractal a react app structure for infinite scale](https://hackernoon.com/fractal-a-react-app-structure-for-infinite-scale-4dab943092af)
 - [Pascal](https://blog.bitsrc.io/structuring-a-react-project-a-definitive-guide-ac9a754df5eb)
 - [Ducks](https://medium.freecodecamp.org/scaling-your-redux-app-with-ducks-6115955638be)
+- [View](https://survivejs.com/react/advanced-techniques/structuring-react-projects/#directory-per-view)
 - Higher Level Organization:
   - [Directory per Concept](https://survivejs.com/react/advanced-techniques/structuring-react-projects/#directory-per-concept)
   - [Directory per Component](https://survivejs.com/react/advanced-techniques/structuring-react-projects/#directory-per-component)
