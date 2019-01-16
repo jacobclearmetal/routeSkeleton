@@ -23,7 +23,7 @@ A skeletal structure inspired by [View](https://survivejs.com/react/advanced-tec
 
 > Why wrap a component in a folder?
 
-It allows a singular component to be cleaned up, tested, accessible styles, and _componentized_:
+It encourages component clean-up, testing, low-barrier styling, and faster composition:
 
 ```
 src
@@ -83,20 +83,22 @@ components
          │
          ├── FooFooterButton
          │   └ index.js
-         └── FooFooter
+         └── ListOfBars
              ├ index.js
-             └── Header
+             └── Baz
                  └ index.js
 ```
 
 ##### Component Re-use?
+
+// TODO Utilize family forever example for a component refactor
 
 ```
 components
  ├── Foo
  │   ├ index.js
  │   │
- │   ├── FooNav // DUPLICATE USE
+ │   ├── Baz // DUPLICATE USE
  │   │   └ index.js
  │   └── FooFooter
  │       └ index.js
@@ -104,7 +106,7 @@ components
  └── Bar
      ├ index.js
      │
-     └── FooNav // DUPLICATE USE
+     └── Baz // DUPLICATE USE
          └ index.js
 ```
 
@@ -127,7 +129,7 @@ components
 
 #### Container === index.js
 
-If you want to seperate `Foo` component into a presentational and container:
+If you want to separate `Foo` component into a presentational and container:
 
 1. create a secondary file named `Foo.js` under the `Foo` folder
 1. stuff container logic into `index.js`
@@ -139,9 +141,9 @@ components
      └ Foo.js // 'presentational'
 ```
 
-### High Level Organization
+### High-Level Organization
 
-Fractal a granular method of organizing, apply it how ever you'd like:
+Fractal a granular method of organizing, apply it however you'd like:
 
 #### Organize by Routes
 
@@ -180,7 +182,7 @@ src
 
 ```
 
-## Redux Useage
+## Redux Usage
 
 ## Sources
 
