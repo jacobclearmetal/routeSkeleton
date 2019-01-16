@@ -22,91 +22,92 @@ src
 
 ##### How to Fractal:
 
-```
-components
-└── Foo
-    └ index.js
-```
-
-##### Children components live with their parents:
+We start with `Foo`
 
 ```
 components
-└── Foo
-    ├ index.js
-    │
-    └── FooNav
-        └ index.js
+ └── Foo
+     └ index.js
+```
+
+##### Children live with their parents:
+
+```
+components
+ └── Foo        <-- Parent
+     ├ index.js
+     │
+     └── FooNav <-- Child
+         └ index.js
 ```
 
 ##### Siblings, together, under parents:
 
 ```
 components
-└── Foo
-    ├ index.js
-    │
-    ├── FooNav
-    │   └ index.js
-    └── FooFooter
-        └ index.js
+ └── Foo           <-- Parent
+     ├ index.js
+     │
+     ├── FooNav    <-- Child / Sibling
+     │   └ index.js
+     └── FooFooter <-- Child / Sibling
+         └ index.js
 ```
 
 ##### Family. Forever.
 
 ```
 components
-└── Foo
-    ├ index.js
-    ├── FooNav
-    │   └ index.js
-    │
-    └── FooFooter
-        ├ index.js
-        │
-        ├── FooFooterButtn
-        │   └ index.js
-        └── FooFooter
-            ├ index.js
-            └── Header
-                └ index.js
+ └── Foo
+     ├ index.js
+     ├── FooNav
+     │   └ index.js
+     │
+     └── FooFooter
+         ├ index.js
+         │
+         ├── FooFooterButton
+         │   └ index.js
+         └── FooFooter
+             ├ index.js
+             └── Header
+                 └ index.js
 ```
 
 ##### Component Re-use?
 
 ```
 components
-├── Foo
-│   ├ index.js
-│   │
-│   ├── FooNav // DUPLICATE USE CASE
-│   │   └ index.js
-│   └── FooFooter
-│        └ index.js
-│
-└── Bar
-    ├ index.js
-    │
-    └── FooNav // DUPLICATE USE CASE
-      └ index.js
-
+ ├── Foo
+ │   ├ index.js
+ │   │
+ │   ├── FooNav // DUPLICATE USE
+ │   │   └ index.js
+ │   └── FooFooter
+ │       └ index.js
+ │
+ └── Bar
+     ├ index.js
+     │
+     └── FooNav // DUPLICATE USE
+         └ index.js
 ```
 
 Move/Rename 'till it makes sense:
 
 ```
 components
-├── Nav // Was FooNav
-│   └ index.js
-│
-├── Foo
-│   ├ index.js
-│   │
-│   └── FooFooter
-│        └ index.js
-│
-└── Bar
-    └ index.js
+ ├── Nav // Was FooNav
+ │   └ index.js
+ │
+ ├── Foo
+ │   ├ index.js
+ │   │
+ │   └── FooFooter
+ │        └ index.js
+ │
+ └── Bar
+     └ index.js
 ```
 
 #### Container === index.js
@@ -118,18 +119,26 @@ If you want to seperate `Foo` component into a presentational and container:
 
 ```
 components
-└── Foo
-    ├ index.js // 'container'
-    └ Foo.js // 'presentational'
+ └── Foo
+     ├ index.js // 'container'
+     └ Foo.js // 'presentational'
 ```
 
-### Useage
+### High Level Organization
 
 ```
 www.clearmetal.com/home
 
 src
  ├── components
+ ├── Nav // Was FooNav
+ │   └ index.js
+ │
+ ├── Foo
+ │   ├ index.js
+ │   │
+ │   └── FooFooter
+ │        └ index.js
  └── routes
     ├── index.js
     └── Home
