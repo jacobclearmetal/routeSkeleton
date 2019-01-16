@@ -15,6 +15,7 @@ A skeletal structure inspired by [View](https://survivejs.com/react/advanced-tec
     - [Example: Routes](https://github.com/jacobclearmetal/routeSkeleton#organize-by-routes)
     - [Example: Functionality](https://github.com/jacobclearmetal/routeSkeleton#organize-by-functionality--business-logic)
 - [Redux]()
+- [Sources]()
 
 ## React
 
@@ -180,3 +181,17 @@ src
 ```
 
 ## Redux Useage
+
+## Sources
+
+- [Scaling React.js](https://vimeo.com/168648012) - Older but good
+- Fractal:
+  - [Fractal Project Structure](https://github.com/davezuko/react-redux-starter-kit/wiki/Fractal-Project-Structure)
+  - [fractal a react app structure for infinite scale](https://hackernoon.com/fractal-a-react-app-structure-for-infinite-scale-4dab943092af)
+- [Pascal](https://blog.bitsrc.io/structuring-a-react-project-a-definitive-guide-ac9a754df5eb)
+- [Ducks](https://medium.freecodecamp.org/scaling-your-redux-app-with-ducks-6115955638be)
+- Higher Level Organization:
+  - [Directory per Concept](https://survivejs.com/react/advanced-techniques/structuring-react-projects/#directory-per-concept)
+  - [Directory per Component](https://survivejs.com/react/advanced-techniques/structuring-react-projects/#directory-per-component)
+  - [Directory per View](https://survivejs.com/react/advanced-techniques/structuring-react-projects/#directory-per-view)
+- [My journey toward a maintainable project structure for React/Redux](https://hackernoon.com/my-journey-toward-a-maintainable-project-structure-for-react-redux-b05dfd999b5)
