@@ -2,6 +2,19 @@
 
 A skeletal structure inspired by [View](https://survivejs.com/react/advanced-techniques/structuring-react-projects/#directory-per-view), [Ducks](https://medium.freecodecamp.org/scaling-your-redux-app-with-ducks-6115955638be), and [Fractal](https://hackernoon.com/fractal-a-react-app-structure-for-infinite-scale-4dab943092af).
 
+## Contents:
+
+- [React](https://github.com/jacobclearmetal/routeSkeleton#react)
+  - [Fractal](https://github.com/jacobclearmetal/routeSkeleton##fractal-folders)
+    - [How To](https://github.com/jacobclearmetal/routeSkeleton#how-to-fractal)
+    - [Parents & Children](https://github.com/jacobclearmetal/routeSkeleton#children-and-parents)
+    - [Siblings]()
+    - [Example: Deep Nesting]()
+  - [Higher Level Organization]()
+    - [Routes]()
+    - [Functionality]()
+- [Redux]()
+
 ## React
 
 ### Fractal Folders
@@ -20,7 +33,7 @@ src
     └── styles.js
 ```
 
-##### How to Fractal:
+##### How to Fractal
 
 We start with `Foo`
 
@@ -30,7 +43,7 @@ components
      └ index.js
 ```
 
-##### Children live with their parents:
+##### Children and Parents
 
 ```
 components
@@ -41,7 +54,7 @@ components
          └ index.js
 ```
 
-##### Siblings, together, under parents:
+##### Siblings, together, under parents
 
 ```
 components
@@ -126,19 +139,17 @@ components
 
 ### High Level Organization
 
+Fractal a granular method of organizing, apply it how ever you'd like:
+
+#### Organize by Routes
+
 ```
 www.clearmetal.com/home
 
 src
- ├── components
- ├── Nav // Was FooNav
- │   └ index.js
- │
- ├── Foo
- │   ├ index.js
- │   │
- │   └── FooFooter
- │        └ index.js
+ ├── components // 'shared' components live here
+ │   └── Nav
+ │       └ index.js
  └── routes
     ├── index.js
     └── Home
@@ -148,31 +159,23 @@ src
         └ Home.js
 ```
 
+#### Organize by Functionality / Business Logic
+
 ```
 src
  ├── components
+ │   ├── Home
+ │   │   ├ index.js
+ │   │   ├ style.js
+ │   │   └ Home.js
+ │   └── Login
+ │       ├ index.js
+ │       ├ style.js
+ │       └ Login.js
  │
- ├── routes
- │  ├── index.js // react-router
- │  ├── Home
- │  │   ├ index.js // container component
- │  │   ├ style.js
- │  │   └ Home.js // optional stateless component
- │  ├── Login
- │  │   ├ index.js // container component
- │  │   ├ style.js
- │  │   └ Login.js // optional stateless component
- └── product
-    ├── container.js
-    ├── actions.js
-    ├── reducers.js
-    ├── types.js
-    ├── sagas.js
-    └── selectors.js
+ └── routes
+     └── index.js
+
 ```
 
 ## Redux Useage
-
-## TODO:
-
-- [ ] Handle Design Imports: custom Icons, Images, etc.
