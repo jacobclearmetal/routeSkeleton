@@ -28,7 +28,7 @@ A skeletal structure inspired by [View](https://survivejs.com/react/advanced-tec
 It encourages component clean-up, testing, accessible styling, and faster re-[composition](https://reactjs.org/docs/composition-vs-inheritance.html):
 
 ```
-src
+components
  └ Foo
     ├ index.js
     ├ utils.js
@@ -187,7 +187,81 @@ src
 
 ```
 
-## Redux Usage
+## Assets
+
+Every good project has icons, images, etc. A designer should control what is being used. Long term, we should have a seperate repo to pull icons, images, styles, etc.
+
+```
+src
+ ├ components
+ ├ routes
+ └ assets
+    ├ images
+    ├ ...
+    └ icons
+```
+
+## Redux
+
+### Basic Structure
+
+This can be sliced and diced, I recommend the following:
+
+```
+ReduxFoo
+ ├ index.js     <-- Contains Reducer and Selectors, could contain Actions
+ ├ Foo.spec.js
+ ├ actions.js
+ ├ types.js
+ ├ utils.js
+ └ sagas
+    ├ index.js
+    ├ utils.js
+    └ sagas.spec.js
+```
+
+### Where to put them
+
+From a repo stand point, we can either add redux files (depending on how we break them up).
+
+#### With Components
+
+With the previous structure, this can get messy, you could nest redux stuff within a state folder, or top level with the component files.
+
+```
+src
+ ├ assets
+ ├ routes
+ └ components
+    └ Foo
+        ├ index.js
+        ├ reducer.js <-- Contains Reducer and Selectors, could contain Actions
+        ├ actions.js
+        ├ types.js
+        └ styles.js
+```
+
+#### Mirrored in State
+
+I prefer this method as it allows easier reducer composition, organic grow, and patterned file naming (e.g. `utils` vs. `fooStateUtils.js`)
+
+```
+src
+ ├ assets
+ ├ routes
+ ├ components
+ │  └ Foo
+ └ state
+    └ Foo
+        ├ index.js
+        ├ Foo.spec.js
+        ├ actions.js
+        ├ types.js
+        ├ utils.js
+        └ sagas
+```
+
+There's also the discussion on building out the Redux state, [which can be cut several ways](https://redux.js.org/faq/organizing-state#how-do-i-organize-nested-or-duplicate-data-in-my-state). All of which are outside of the scope for this project.
 
 ## Services
 
@@ -204,6 +278,10 @@ src
         └ sessions
             └ index.js
 ```
+
+## Everything Else
+
+Move it till is makes sense.
 
 ## Sources
 
