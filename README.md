@@ -16,8 +16,12 @@ A skeletal structure inspired by [View](https://survivejs.com/react/advanced-tec
   - [Higher Level Organization](https://github.com/jacobclearmetal/routeSkeleton#high-level-organization)
     - [Example: Routes](https://github.com/jacobclearmetal/routeSkeleton#organize-by-routes)
     - [Example: Functionality](https://github.com/jacobclearmetal/routeSkeleton#organize-by-functionality--business-logic)
-- [Redux]()
-- [Sources]()
+- [Redux](https://github.com/jacobclearmetal/routeSkeleton#redux)
+  - [Basic Structure](https://github.com/jacobclearmetal/routeSkeleton#basic-structure)
+  - [Now What](https://github.com/jacobclearmetal/routeSkeleton#now-what)
+- [Services](https://github.com/jacobclearmetal/routeSkeleton#services)
+- [Everything Else](https://github.com/jacobclearmetal/routeSkeleton#everything-else)
+- [Sources](https://github.com/jacobclearmetal/routeSkeleton#sources)
 
 ## React
 
@@ -220,7 +224,7 @@ ReduxFoo
     └ sagas.spec.js
 ```
 
-### Where to put them
+### Now What
 
 From a repo stand point, we can either add redux files (depending on how we break them up).
 
@@ -297,3 +301,4 @@ Move it till is makes sense.
   - [Directory per Component](https://survivejs.com/react/advanced-techniques/structuring-react-projects/#directory-per-component)
   - [Directory per View](https://survivejs.com/react/advanced-techniques/structuring-react-projects/#directory-per-view)
 - [My journey toward a maintainable project structure for React/Redux](https://hackernoon.com/my-journey-toward-a-maintainable-project-structure-for-react-redux-b05dfd999b5)
+- [Redux Organization](https://redux.js.org/faq/organizing-state#how-do-i-organize-nested-or-duplicate-data-in-my-state)
